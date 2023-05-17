@@ -8,6 +8,7 @@ import {
 import Main from './components/MainLayout/Main';
 import Home from './components/pages/Home/Home/Home';
 import ErrorPage from './components/pages/ErrorPage/ErrorPage';
+import Login from './components/pages/Home/Home/Login/Login';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<Home></Home>
+      },
+      {
+        path:'login',
+        element:<Login></Login>
       }
     ]
   },
