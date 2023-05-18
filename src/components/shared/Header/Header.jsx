@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import logo from '../../../assets/images/logo-removebg-preview.png'
 
 const Header = () => {
@@ -26,19 +27,57 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Home</a>
+            <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold" : ""
+                  }
+                >
+                  Home
+                </NavLink>
             </li>
             <li>
-              <a>All Toys</a>
+            <NavLink
+                  to="/allToys"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold" : ""
+                  }
+                >
+                  All Toys
+                </NavLink>
             </li>
             <li>
-              <a>My Toys</a>
+             
+              <NavLink
+                  to="/myToys"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold" : ""
+                  }
+                >
+                  My Toys
+                </NavLink>
             </li>
             <li>
-              <a>Add a Toy</a>
+             
+              <NavLink
+                  to="/addToys"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold" : ""
+                  }
+                >
+                  Add a Toy
+                </NavLink>
             </li>
             <li>
-              <a>Blog</a>
+              
+              <NavLink
+                  to="/blog"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold" : ""
+                  }
+                >
+                  Blog
+                </NavLink>
             </li>
           </ul>
         </div>
@@ -50,20 +89,58 @@ const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Home</a>
+          <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold" : ""
+                  }
+                >
+                  Home
+                </NavLink>
           </li>
           
           <li>
-            <a>All Toys</a>
+           
+            <NavLink
+                  to="/allToys"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold" : ""
+                  }
+                >
+                  All Toys
+                </NavLink>
           </li>
           <li>
-            <a>My Toys</a>
+            <NavLink
+                  to="/myToys"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold" : ""
+                  }
+                >
+                  My Toys
+                </NavLink>
           </li>
           <li>
-            <a>Add a Toy</a>
+            
+            <NavLink
+                  to="/addToys"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold" : ""
+                  }
+                >
+                  Add a Toys
+                </NavLink>
           </li>
           <li>
-            <a>Blog</a>
+          
+            <NavLink
+                  to="/blog"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold" : ""
+                  }
+                >
+                  Blog
+                </NavLink>
           </li>
         </ul>
       </div>
