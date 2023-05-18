@@ -13,6 +13,8 @@ import MyToys from "./components/pages/MyToys/MyToys";
 import AddToys from "./components/pages/AddToys/AddToys";
 import Blog from "./components/pages/Blog/Blog";
 import  { Toaster } from 'react-hot-toast';
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Details from "./components/pages/Details/Details";
 
 const router = createBrowserRouter([
   {
@@ -37,8 +39,13 @@ const router = createBrowserRouter([
         element:<AllToys></AllToys>
       },
       {
+        path:'/details/:id',
+        element:<PrivateRoute><Details></Details></PrivateRoute>,
+        loader:({params})=> fetch(`http://localhost:5000/allToys/${params.id}`)
+      },
+      {
         path:'myToys',
-        element:<MyToys></MyToys>
+        element:<PrivateRoute><MyToys></MyToys></PrivateRoute>
       },
       {
         path:'addToys',

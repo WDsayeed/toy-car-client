@@ -10,7 +10,10 @@ const AllToys = () => {
       .then((data) => setAllToys(data));
   }, []);
   return (
-    <div className="overflow-x-auto w-full md:container mx-auto my-2">
+    <div className="overflow-x-auto w-full md:container mx-auto my-10">
+      <h1 className="text-4xl text-center ">All Toys</h1>    
+      <div  className="bg-[#86ab0b] mb-10 w-1/4 h-[2px] mx-auto" ></div>
+
       <table className="table table-zebra w-full">
         <thead className="w-full">
           <tr>

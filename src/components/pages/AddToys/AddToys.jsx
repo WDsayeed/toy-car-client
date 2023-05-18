@@ -1,7 +1,10 @@
-import  { useEffect, useState } from "react";
+import  { createContext, useEffect, useState } from "react";
 import Swal from 'sweetalert2'
+import { AuthContext } from "../../provider/AuthProvider";
 
 const AddToys = () => {
+  const {user}= createContext(AuthContext)
+  console.log(user)
   const [category, setCategory] = useState([])
 
         const handleAddToys = event=>{
@@ -15,8 +18,9 @@ const AddToys = () => {
                 const quantity = form.quantity.value 
                 const description = form.description.value 
                 const category = form.category.value
+                const price = form.price.value
 
-                const toys = {photo, name, seller, email, rating, quantity, description, category}
+                const toys = {photo, name, seller, email, rating, quantity, description, category, price}
                 console.log(toys)
 
                 fetch('http://localhost:5000/addToys',{
@@ -66,6 +70,7 @@ const AddToys = () => {
           <input
             type="text"
             placeholder="name"
+            // defaultValue={user?.displayName}
             name="name"
             className="input input-bordered w-full"
           />
@@ -88,6 +93,7 @@ const AddToys = () => {
           <input
             type="email"
             name="email"
+            // defaultValue={user?.email}
             placeholder="seller email"
             className="input input-bordered w-full"
           />

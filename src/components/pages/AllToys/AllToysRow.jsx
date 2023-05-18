@@ -1,36 +1,21 @@
-import React from "react";
+import React, { createContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const AllToysRow = ({ toy }) => {
-  const { _id, seller, toyname, sub_category, Price, available_quantity } = toy;
+  const {user} = createContext(AuthContext)
+  const { _id, seller, name, category, Price, quantity } = toy;
   return (
     <tr>
-      <th>
-        <button className="btn btn-circle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-      </th>
+     
       <td>{seller}</td>
-      <td>{toyname}</td>
-      <td>{sub_category}</td>
+      <td>{name}</td>
+      <td>{category}</td>
       <td>{Price}</td>
-      <td>{available_quantity}</td>
+      <td>{quantity}</td>
       <td>
-        <Link to="">
-          <button className="btn bg-[#91b421]">View Details</button>
+        <Link to={`/details/${_id}`}>
+          <button className="btn bg-[#86ab0b] border-0 hover:text-[#69860c] hover:bg-[#FAEDCD]">View Details</button>
         </Link>
       </td>
       <td>
