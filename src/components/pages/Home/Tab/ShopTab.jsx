@@ -5,7 +5,7 @@ const ShopTab = () => {
         return (
                 <Tabs>
                 <TabList>
-                  <Tab>Title 1</Tab>
+                  <Tab>Sport car</Tab>
                   <Tab>Title 2</Tab>
                 </TabList>
             

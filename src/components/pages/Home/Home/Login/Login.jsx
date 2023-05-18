@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import  { useContext, useState } from "react";
 import { Form, Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../../provider/AuthProvider";
 import { toast } from "react-hot-toast";
+import loginImage from '../../../../../assets/images/login-removebg-preview.png'
 
 const Login = () => {
 
@@ -51,16 +52,13 @@ const Login = () => {
   };
   return (
     <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col lg:flex-row">
+      <div className="hero-content flex justify-around w-full">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now!</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+          <img className="bg-[#E9EDC9] w-full rounded-md" src={loginImage} alt="" />
         </div>
-        <Form className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100" onSubmit={handleLogin}>
+       <div>
+        <h1 className="text-5xl font-bold mb-4 text-center">Login now!</h1>
+        <Form className="card flex-shrink-0 w-full  shadow-2xl bg-base-100" onSubmit={handleLogin}>
           <div className="card-body">
             <div className="form-control">
               <label className="label">
@@ -94,9 +92,11 @@ const Login = () => {
                 
                 Google sign In</button>
             </div>
-            <p>New to TOYCARHUB? <Link to='/register'>create an account</Link></p>
+            <p>New to TOYCARHUB? <Link to='/register'>
+              <span className="text-[#455804] underline underline-offset-4"> create an account</span></Link></p>
           </div>
         </Form>
+       </div>
       </div>
     </div>
   );

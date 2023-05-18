@@ -1,7 +1,18 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/images/logo-removebg-preview.png'
+import { useContext } from 'react';
+import { AuthContext } from '../../provider/AuthProvider';
+import { Tooltip } from "react-tooltip";
+
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  // console.log(user)
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="navbar bg-[#CCD5AE]">
       <div className="navbar-start">
@@ -144,11 +155,38 @@ const Header = () => {
           </li>
         </ul>
       </div>
+     
       <div className="navbar-end">
-      <div className="w-10 rounded-full">
-          <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          {user && (
+            <div className="md:flex-none gap-2 mr-2 ">
+              <div className="w-10  rounded-full ">
+                <img
+                className="rounded-full h-10 ring-2 ring-purple-600"
+                  data-tooltip-id="my-tooltip"
+                  data-tooltip-content={user?.displayName}
+                  src={user?.photoURL}
+                />
+                {/* <Tooltip></Tooltip> */}
+                {user.displayName && <Tooltip  id="my-tooltip"></Tooltip>}
+              </div>
+            </div>
+          )}
+          {user ? (
+            <button
+              onClick={handleLogOut}
+              className="btn hover:border hover:bg-[#CCD5AE] hover:text-[#465b03] bg-[#977d3c] text-black"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link to="/login">
+              <button className=" hover:border hover:border-purple-900 hover:text-purple-800 bg-purple-600 text-white">
+                Login
+              </button>
+            </Link>
+          )}
         </div>
-      </div>
+      
     </div>
   );
 };
