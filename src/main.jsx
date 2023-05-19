@@ -15,6 +15,7 @@ import Blog from "./components/pages/Blog/Blog";
 import  { Toaster } from 'react-hot-toast';
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Details from "./components/pages/Details/Details";
+import UpdateToy from "./components/pages/UpdateToy/UpdateToy";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
       {
         path:'addToys',
         element:<AddToys></AddToys>
+      },
+      {
+        path:'/update/:id',
+        element:<UpdateToy></UpdateToy>,
+        loader: ({params})=> fetch(`http://localhost:5000/allToys/${params.id}`)
       },
       {
         path:'blog',

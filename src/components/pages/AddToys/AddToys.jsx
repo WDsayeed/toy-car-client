@@ -34,12 +34,14 @@ const AddToys = () => {
                 .then(res=> res.json())
                 .then(data=> {
                   console.log(data)
-                  Swal.fire({
-                    title: 'success!',
-                    text: 'Toy Added Successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
+                  if(data.insertedId > 0){
+                    Swal.fire({
+                      title: 'success!',
+                      text: 'Toy Added Successfully',
+                      icon: 'success',
+                      confirmButtonText: 'Cool'
+                    })
+                  }
                 })
         }
 
@@ -161,7 +163,7 @@ const AddToys = () => {
         </div>
       </div>
       <div className="text-center w-full ">
-      <button className="btn btn-wide bg-[#CCD5AE] border-0 hover:text-[#69860c] hover:bg-[#FAEDCD]">add</button>
+      <button className="btn btn-wide bg-[#CCD5AE] border-0 hover:text-[#69860c] hover:bg-[#FAEDCD] text-black">add</button>
       </div>
     </form>
   );
