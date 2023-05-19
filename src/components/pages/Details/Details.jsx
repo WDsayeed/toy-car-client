@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useLoaderData } from "react-router-dom";
 
 const Details = () => {
@@ -10,7 +10,6 @@ const Details = () => {
     rating,
     quantity,
     description,
-    category,
     email,
     price,
   } = toyDetails;

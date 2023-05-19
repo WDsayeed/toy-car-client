@@ -3,9 +3,10 @@ import 'react-tabs/style/react-tabs.css';
 
 const ShopTab = () => {
         return (
-                <Tabs>
+                <div className='md:w-2/4 mx-auto'>
+                  <Tabs>
                 <TabList>
-                  <Tab>Sport car</Tab>
+                  <Tab></Tab>
                   <Tab>Title 2</Tab>
                 </TabList>
             
@@ -16,6 +17,7 @@ const ShopTab = () => {
                   <h2>Any content 2</h2>
                 </TabPanel>
               </Tabs>
+                </div>
         );
 };
 
