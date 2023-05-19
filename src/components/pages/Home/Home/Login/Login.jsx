@@ -4,9 +4,11 @@ import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../../provider/AuthProvider";
 import { toast } from "react-hot-toast";
 import loginImage from '../../../../../assets/images/login-removebg-preview.png'
+import useTitle from "../../../../../hooks/useTitle";
 
 const Login = () => {
 
+  useTitle('Login')
   const {signIn, googleSignIn} = useContext(AuthContext)
   const [error, setError] = useState('')
 

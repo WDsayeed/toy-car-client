@@ -153,6 +153,17 @@ const Header = () => {
                   Blog
                 </NavLink>
           </li>
+          <li>
+          
+            <NavLink
+                  to="/register"
+                  className={({ isActive }) =>
+                    isActive ? "text-white font-semibold" : ""
+                  }
+                >
+                  Register
+                </NavLink>
+          </li>
         </ul>
       </div>
      

@@ -2,12 +2,13 @@ import { useContext, useState } from "react";
 import { Form, Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../../provider/AuthProvider";
 import regImg from "../../../../../assets/images/login-removebg-preview.png";
+import useTitle from "../../../../../hooks/useTitle";
 
 const Register = () => {
   const { createUser, updateUser } = useContext(AuthContext);
   const [errorPassword, setErrorPassword] = useState("");
   const navigate = useNavigate();
-
+  useTitle('Register')
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;

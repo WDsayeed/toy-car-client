@@ -1,10 +1,11 @@
-import  { createContext, useEffect, useState } from "react";
+import  { createContext, useContext, useEffect, useState } from "react";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../../provider/AuthProvider";
+import useTitle from "../../../hooks/useTitle";
 
 const AddToys = () => {
-  const {user}= createContext(AuthContext)
-  console.log(user)
+  const {user}= useContext(AuthContext)
+  useTitle('AddToys')
   const [category, setCategory] = useState([])
 
         const handleAddToys = event=>{
@@ -70,7 +71,6 @@ const AddToys = () => {
           <input
             type="text"
             placeholder="name"
-            // defaultValue={user?.displayName}
             name="name"
             className="input input-bordered w-full"
           />
@@ -82,7 +82,8 @@ const AddToys = () => {
           <input
             type="text"
             name="sellerName"
-            placeholder="seller name"
+            // placeholder="seller name"
+            defaultValue={user?.displayName}
             className="input input-bordered w-full"
           />
         </div>
@@ -93,7 +94,7 @@ const AddToys = () => {
           <input
             type="email"
             name="email"
-            // defaultValue={user?.email}
+            defaultValue={user?.email}
             placeholder="seller email"
             className="input input-bordered w-full"
           />
