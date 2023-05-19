@@ -1,4 +1,6 @@
 import React from "react";
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -23,7 +25,7 @@ const MyToysRow = ({ toy, handleDelete }) => {
   return (
     <tr>
       <th>
-        <button onClick={()=> handleDelete(_id)} className="btn btn-circle">
+        <button onClick={()=> handleDelete(_id)} className="btn btn-circle bg-[#CCD5AE] border-0 hover:text-[#69860c] hover:bg-[#FAEDCD] text-black">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -58,10 +60,17 @@ const MyToysRow = ({ toy, handleDelete }) => {
       <td>{category}</td>
       <td>{price}</td>
       <td>{quantity}</td>
-      <td>{rating}</td>
+      <td> <div className="flex">
+                            <Rating
+                              style={{ maxWidth: 120 }}
+                              value={Math.round(rating)}
+                              readOnly
+                            />
+                            <span>{rating}</span>
+                          </div></td>
       <th>
         <Link to={`/update/${_id}`}>
-        <button onClick={()=> handleUpdate(_id)} className="btn btn-ghost btn-xs">Edit</button>
+        <button onClick={()=> handleUpdate(_id)} className="btn  bg-[#CCD5AE] border-0 hover:text-[#69860c] hover:bg-[#FAEDCD] text-black">Edit</button>
         </Link>
       </th>
     </tr>

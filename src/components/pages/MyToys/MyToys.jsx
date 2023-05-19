@@ -51,15 +51,20 @@ const MyToys = () => {
 }
 
 
-  return <div className="overflow-x-auto w-full md:container mx-auto">
+  return <div className="overflow-x-auto w-full md:container mx-auto my-10">
+    <h1 className="text-4xl text-center mb-7">My <span className="text-[#96bf0e]"> Toys</span></h1>
   <table className="table w-full">
     {/* head */}
     <thead>
       <tr>
-       
+       <th></th>
         <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
+        <th>Seller</th>
+        <th>Seller Email</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Rating</th>
         <th></th>
       </tr>
     </thead>

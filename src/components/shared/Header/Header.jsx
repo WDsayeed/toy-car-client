@@ -41,7 +41,7 @@ const Header = () => {
             <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    isActive ? "text-white font-semibold" : ""
+                    isActive ? "text-[#e9e96d] font-semibold" : ""
                   }
                 >
                   Home
@@ -51,7 +51,7 @@ const Header = () => {
             <NavLink
                   to="/allToys"
                   className={({ isActive }) =>
-                    isActive ? "text-white font-semibold" : ""
+                    isActive ? "text-[#e9e96d] font-semibold" : ""
                   }
                 >
                   All Toys
@@ -62,7 +62,7 @@ const Header = () => {
               <NavLink
                   to="/myToys"
                   className={({ isActive }) =>
-                    isActive ? "text-white font-semibold" : ""
+                    isActive ? "text-[#e9e96d] font-semibold" : ""
                   }
                 >
                   My Toys
@@ -73,7 +73,7 @@ const Header = () => {
               <NavLink
                   to="/addToys"
                   className={({ isActive }) =>
-                    isActive ? "text-white font-semibold" : ""
+                    isActive ? "text-[#e9e96d] font-semibold" : ""
                   }
                 >
                   Add a Toy
@@ -84,7 +84,7 @@ const Header = () => {
               <NavLink
                   to="/blog"
                   className={({ isActive }) =>
-                    isActive ? "text-white font-semibold" : ""
+                    isActive ? "text-[#e9e96d] font-semibold" : ""
                   }
                 >
                   Blog
@@ -103,7 +103,7 @@ const Header = () => {
           <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    isActive ? "text-white font-semibold" : ""
+                    isActive ? "text-[#e9e96d] font-semibold" : ""
                   }
                 >
                   Home
@@ -115,7 +115,7 @@ const Header = () => {
             <NavLink
                   to="/allToys"
                   className={({ isActive }) =>
-                    isActive ? "text-white font-semibold" : ""
+                    isActive ? "text-[#e9e96d] font-semibold" : ""
                   }
                 >
                   All Toys
@@ -125,7 +125,7 @@ const Header = () => {
             <NavLink
                   to="/myToys"
                   className={({ isActive }) =>
-                    isActive ? "text-white font-semibold" : ""
+                    isActive ? "text-[#e9e96d]font-semibold" : ""
                   }
                 >
                   My Toys
@@ -136,7 +136,7 @@ const Header = () => {
             <NavLink
                   to="/addToys"
                   className={({ isActive }) =>
-                    isActive ? "text-white font-semibold" : ""
+                    isActive ? "text-[#e9e96d] font-semibold" : ""
                   }
                 >
                   Add a Toys
@@ -147,7 +147,7 @@ const Header = () => {
             <NavLink
                   to="/blog"
                   className={({ isActive }) =>
-                    isActive ? "text-white font-semibold" : ""
+                    isActive ? "text-[#e9e96d] font-semibold" : ""
                   }
                 >
                   Blog
@@ -158,7 +158,7 @@ const Header = () => {
             <NavLink
                   to="/register"
                   className={({ isActive }) =>
-                    isActive ? "text-white font-semibold" : ""
+                    isActive ? "text-[#e9e96d] font-semibold" : ""
                   }
                 >
                   Register
@@ -172,7 +172,7 @@ const Header = () => {
             <div className="md:flex-none gap-2 mr-2 ">
               <div className="w-10  rounded-full ">
                 <img
-                className="rounded-full h-10 ring-2 ring-purple-600"
+                className="rounded-full h-10 ring-2 ring-[#8b8b06]"
                   data-tooltip-id="my-tooltip"
                   data-tooltip-content={user?.displayName}
                   src={user?.photoURL}
@@ -185,13 +185,13 @@ const Header = () => {
           {user ? (
             <button
               onClick={handleLogOut}
-              className="btn hover:border hover:bg-[#CCD5AE] hover:text-[#465b03] bg-[#977d3c] text-black"
+              className="btn border-[#8b8b06] hover:bg-[#7ecb0a45] hover:text-black bg-[#e9e96d] text-black"
             >
               Logout
             </button>
           ) : (
             <Link to="/login">
-              <button className=" hover:border hover:border-purple-900 hover:text-purple-800 bg-purple-600 text-white">
+              <button className=" hover:border hover:border-purple-900 hover:text-purple-800 bg-[#1B9C85] text-white">
                 Login
               </button>
             </Link>
