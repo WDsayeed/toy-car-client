@@ -4,7 +4,7 @@ import useTitle from "../../../hooks/useTitle";
 
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
-useTitle('AllToys')
+  useTitle("AllToys");
   useEffect(() => {
     fetch("http://localhost:5000/allToys")
       .then((res) => res.json())
@@ -12,8 +12,9 @@ useTitle('AllToys')
   }, []);
   return (
     <div className="overflow-x-auto w-full md:container mx-auto my-10">
-      <h1 className="text-4xl text-center ">All Toys</h1>    
-      <div  className="bg-[#86ab0b] mb-10 w-1/4 h-[2px] mx-auto" ></div>
+      <h1 className="text-4xl text-center mb-10">
+        All <span className="text-[#86ab0b]">Toys</span>{" "}
+      </h1>
 
       <table className="table table-zebra w-full">
         <thead className="w-full">
@@ -23,6 +24,7 @@ useTitle('AllToys')
             <th>CATEGORY</th>
             <th>PRICE</th>
             <th>QUANTITY</th>
+            <th></th>
           </tr>
         </thead>
 

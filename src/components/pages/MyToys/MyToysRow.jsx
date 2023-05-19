@@ -25,7 +25,7 @@ const MyToysRow = ({ toy, handleDelete }) => {
   return (
     <tr>
       <th>
-        <button onClick={()=> handleDelete(_id)} className="btn btn-circle bg-[#CCD5AE] border-0 hover:text-[#69860c] hover:bg-[#FAEDCD] text-black">
+        <button onClick={()=> handleDelete(_id)} className="btn btn-circle btn-outline hover:border hover:border-[#92b538] hover:text-[#769e13] hover:bg-white bg-[#92b538] text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -70,7 +70,7 @@ const MyToysRow = ({ toy, handleDelete }) => {
                           </div></td>
       <th>
         <Link to={`/update/${_id}`}>
-        <button onClick={()=> handleUpdate(_id)} className="btn  bg-[#CCD5AE] border-0 hover:text-[#69860c] hover:bg-[#FAEDCD] text-black">Edit</button>
+        <button onClick={()=> handleUpdate(_id)} className="btn btn-outline hover:border hover:border-[#92b538] hover:text-[#769e13] hover:bg-white bg-[#92b538] text-white">Edit</button>
         </Link>
       </th>
     </tr>

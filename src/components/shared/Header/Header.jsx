@@ -92,7 +92,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div className='w-20'>
+        <div className='w-16'>
                 <img className='w-full' src={logo} alt="" />
         </div>
         <a className=" font-bold font-mono text-3xl">Toy<span className="text-[#825e03]">car</span>Hub </a>
@@ -172,7 +172,7 @@ const Header = () => {
             <div className="md:flex-none gap-2 mr-2 ">
               <div className="w-10  rounded-full ">
                 <img
-                className="rounded-full h-10 ring-2 ring-[#8b8b06]"
+                className="rounded-full h-10 ring-2 ring-[#454503]"
                   data-tooltip-id="my-tooltip"
                   data-tooltip-content={user?.displayName}
                   src={user?.photoURL}
@@ -185,13 +185,13 @@ const Header = () => {
           {user ? (
             <button
               onClick={handleLogOut}
-              className="btn border-[#8b8b06] hover:bg-[#7ecb0a45] hover:text-black bg-[#e9e96d] text-black"
+              className="btn btn-outline hover:border hover:border-[#92b538] hover:text-[#769e13] hover:bg-white bg-[#92b538] text-white"
             >
               Logout
             </button>
           ) : (
             <Link to="/login">
-              <button className=" hover:border hover:border-purple-900 hover:text-purple-800 bg-[#1B9C85] text-white">
+              <button className="btn btn-outline hover:border hover:border-[#92b538] hover:text-[#769e13] hover:bg-white bg-[#92b538] text-white">
                 Login
               </button>
             </Link>
