@@ -3,6 +3,7 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { Link } from "react-router-dom";
 
 const ShopTab = () => {
   const [datas, setData] = useState([]);
@@ -10,7 +11,6 @@ const ShopTab = () => {
   const [category, setCategory] = useState([]);
   const [test, setTest] = useState(0);
 
-  // console.log(activeTab)
   useEffect(() => {
     fetch("http://localhost:5000/allToys")
       .then((res) => res.json())
@@ -40,8 +40,8 @@ const ShopTab = () => {
   };
 
   return (
-    <div>
-      <div className="md:w-2/4 mx-auto">
+    <div className="md:w-2/4 mx-auto my-20">
+      <h1 className="text-4xl text-center mb-6">Shop By<span className="text-[#7ca005]"> Category</span></h1>
         <Tabs>
           <TabList>
             {category.map((cate) => (
@@ -49,15 +49,6 @@ const ShopTab = () => {
                 {cate.name}
               </Tab>
             ))}
-
-            {/* <Tab>
-              <div onClick={() => handleTabClick("mini police car")}>
-                Mini police car
-              </div>
-            </Tab>
-            <Tab>
-              <div onClick={() => handleTabClick("truck")}>Truck</div>
-            </Tab> */}
           </TabList>
           <div>
             {category.map((cate) => (
@@ -79,7 +70,7 @@ const ShopTab = () => {
                             <span>Price:</span>
                             {td.price}
                           </p>
-                          {/* <p><span>Rating:</span>{td.rating}</p> */}
+
                           <div className="flex">
                             <Rating
                               style={{ maxWidth: 120 }}
@@ -89,9 +80,11 @@ const ShopTab = () => {
                             <span>{td.rating}</span>
                           </div>
                           <div className="card-actions justify-end">
-                            <button className="btn bg-[#86ab0b] border-0 hover:text-[#69860c] hover:bg-[#FAEDCD]">
-                              View Details
-                            </button>
+                            <Link to={`/details/${td._id}`}>
+                              <button className="btn bg-[#86ab0b] border-0 hover:text-[#69860c] hover:bg-[#FAEDCD]">
+                                View Details
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -101,18 +94,8 @@ const ShopTab = () => {
               </TabPanel>
             ))}
           </div>
-
-          {/* {
-          datas.map(data=> <SingleTab
-            key={data._id}
-            data={data}
-            handleTabClick={handleTabClick}
-            ></SingleTab>)
-        }
-     */}
         </Tabs>
       </div>
-    </div>
   );
 };
 
