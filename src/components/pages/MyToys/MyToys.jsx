@@ -1,5 +1,6 @@
 import  { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import MyToysRow from "./MyToysRow";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -15,16 +16,12 @@ const MyToys = () => {
       });
   }, [user]);
 
-  return <div className="overflow-x-auto w-full">
+  return <div className="overflow-x-auto w-full md:container mx-auto">
   <table className="table w-full">
     {/* head */}
     <thead>
       <tr>
-        <th>
-          <label>
-            <input type="checkbox" className="checkbox" />
-          </label>
-        </th>
+       
         <th>Name</th>
         <th>Job</th>
         <th>Favorite Color</th>
@@ -32,9 +29,13 @@ const MyToys = () => {
       </tr>
     </thead>
     <tbody>
-      {/* row 1 */}
       
-     
+     {
+      myToy.map(toy=> <MyToysRow
+      key={toy._id}
+      toy={toy}
+      ></MyToysRow>)
+     }
     </tbody>
   
   </table>
