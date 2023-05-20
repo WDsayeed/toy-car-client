@@ -7,8 +7,7 @@ const PrivateRoute = ({children}) => {
         const {user, loading} = useContext(AuthContext)
         const location = useLocation()
         if(loading){
-                return <div className="w-full mx-auto">
-                        <Circles
+                return <Circles
                 height="80"
                 width="80"
                 color="#4fa94d"
@@ -17,7 +16,8 @@ const PrivateRoute = ({children}) => {
                 wrapperClass=""
                 visible={true}
               />
-                </div>
+              
+              
         }
         if(user){
             return children
