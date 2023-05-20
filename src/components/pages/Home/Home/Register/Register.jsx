@@ -9,6 +9,7 @@ const Register = () => {
   const [errorPassword, setErrorPassword] = useState("");
   const navigate = useNavigate();
   useTitle('Register')
+  
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;

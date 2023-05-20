@@ -44,8 +44,8 @@ const AllToys = () => {
         </thead>
 
         <tbody className="my-5">
-          {allToys.map((toy) => (
-            <AllToysRow key={toy._id} toy={toy}></AllToysRow>
+          {allToys.map((toy,index) => (
+            <AllToysRow key={toy._id} toy={toy} index={index}></AllToysRow>
           ))}
         </tbody>
       </table>

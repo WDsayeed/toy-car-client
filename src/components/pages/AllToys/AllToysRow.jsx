@@ -2,12 +2,12 @@ import React, { createContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
-const AllToysRow = ({ toy }) => {
+const AllToysRow = ({ toy, index }) => {
   const {user} = createContext(AuthContext)
   const { _id, seller, name, category, price, quantity } = toy;
   return (
     <tr>
-     
+     <td>{index + 1}</td>
       <td>{seller}</td>
       <td>{name}</td>
       <td>{category}</td>

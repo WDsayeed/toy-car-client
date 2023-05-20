@@ -1,13 +1,19 @@
 import { FaMapMarkerAlt,FaMobileAlt } from "react-icons/fa";
 import { BsEnvelope } from "react-icons/bs";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const Contact = () => {
+  useEffect(()=>{
+    AOS.init({duration:2000});
+  },[])
   return (
     <div>
         <h1 className="text-4xl text-center mb-10 my-28">Contact <span className="text-[#7ca005]">Us</span></h1>
       <div className="md:flex md:justify-between w-full md:container mx-auto">
         
-          <div className="card w-full md:w-1/4 bg-base-100 shadow-xl">
+          <div className="card w-full md:w-1/4 bg-base-100 shadow-xl" data-aos="zoom-in-up">
             <figure className="px-10 pt-10">
                 <div className="btn btn-circle btn-outline hover:bg-[#ccea6a] hover:text-white hover:border-0 text-[#7ca005]">
               <FaMapMarkerAlt></FaMapMarkerAlt>
@@ -22,7 +28,7 @@ const Contact = () => {
           </div>
      
         
-          <div className="card w-full md:w-1/4 bg-base-100 shadow-xl">
+          <div className="card w-full md:w-1/4 bg-base-100 shadow-xl" data-aos="zoom-in-up">
             <figure className="px-10 pt-10">
               <div className="btn btn-circle btn-outline hover:bg-[#ccea6a] hover:text-white hover:border-0 text-[#7ca005]">
                 <FaMobileAlt></FaMobileAlt>
@@ -36,7 +42,7 @@ const Contact = () => {
           </div>
        
     
-          <div className="card w-full md:w-1/4 bg-base-100 shadow-xl">
+          <div className="card w-full md:w-1/4 bg-base-100 shadow-xl" data-aos="zoom-in-up">
             <figure className="px-10 pt-10">
             <div className="btn btn-circle btn-outline hover:bg-[#ccea6a] hover:text-white hover:border-0 text-[#7ca005]">
                 <BsEnvelope></BsEnvelope>

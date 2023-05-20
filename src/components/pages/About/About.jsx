@@ -1,6 +1,14 @@
 import aboutImg from "../../../assets/images/about.jpg";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const About = () => {
+  
+  useEffect(()=>{
+    AOS.init({duration:2000});
+  },[])
+
   return (
     <div className="flex md:container md:items-center mx-auto mt-40 mb-20 gap-5 w-full">
       <div className="w-2/4">
@@ -10,7 +18,7 @@ const About = () => {
       
       </div>
       <div  className="1/2">
-        <img className="rounded-lg w-full" src={aboutImg} alt="" />
+        <img className="rounded-lg w-full" data-aos="zoom-in" src={aboutImg} alt="" />
       </div>
     </div>
   );
