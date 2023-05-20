@@ -4,7 +4,7 @@ import { BsEnvelope } from "react-icons/bs";
 const Contact = () => {
   return (
     <div>
-        <h1 className="text-4xl text-center ">Contact <span className="text-[#7ca005]">Us</span></h1>
+        <h1 className="text-4xl text-center mb-10 my-28">Contact <span className="text-[#7ca005]">Us</span></h1>
       <div className="md:flex md:justify-between w-full md:container mx-auto">
         
           <div className="card w-full md:w-1/4 bg-base-100 shadow-xl">

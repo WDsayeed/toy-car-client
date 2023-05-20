@@ -1,5 +1,6 @@
 import  { createContext, useContext, useEffect, useState } from "react";
 import Swal from 'sweetalert2'
+// import 'sweetalert2/src/sweetalert2.scss'
 import { AuthContext } from "../../provider/AuthProvider";
 import useTitle from "../../../hooks/useTitle";
 
@@ -8,6 +9,7 @@ const AddToys = () => {
   useTitle('AddToys')
   const [category, setCategory] = useState([])
 
+  console.log(category)
         const handleAddToys = event=>{
                 event.preventDefault()
                 const form = event.target 
@@ -24,7 +26,7 @@ const AddToys = () => {
                 const toys = {photo, name, seller, email, rating, quantity, description, category, price}
                 console.log(toys)
 
-                fetch('http://localhost:5000/addToys',{
+                fetch('https://toy-car-server-bay.vercel.app/addToys',{
                   method:'POST',
                   headers:{
                     'content-type': 'application/json'
@@ -34,7 +36,7 @@ const AddToys = () => {
                 .then(res=> res.json())
                 .then(data=> {
                   console.log(data)
-                  if(data.insertedId > 0){
+                  if(data.insertedId){
                     Swal.fire({
                       title: 'success!',
                       text: 'Toy Added Successfully',
@@ -46,7 +48,7 @@ const AddToys = () => {
         }
 
         useEffect(()=>{
-          fetch('http://localhost:5000/categoryToy')
+          fetch('https://toy-car-server-bay.vercel.app/categoryToy')
           .then(res=> res.json())
           .then(data=> setCategory(data))
         },[])
@@ -106,7 +108,7 @@ const AddToys = () => {
             <span className="label-text">Price:</span>
           </label>
           <input
-            type="text"
+            type="number"
             name="price"
             placeholder="price"
             className="input input-bordered w-full"
@@ -117,7 +119,7 @@ const AddToys = () => {
             <span className="label-text">Rating:</span>
           </label>
           <input
-            type="text"
+            type="number"
             name="rating"
             placeholder="rating"
             className="input input-bordered w-full"
@@ -128,7 +130,7 @@ const AddToys = () => {
             <span className="label-text">Available quantity:</span>
           </label>
           <input
-            type="text"
+            type="number"
             name="quantity"
             placeholder="quantity"
             className="input input-bordered w-full"

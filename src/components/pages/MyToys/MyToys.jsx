@@ -10,7 +10,7 @@ const MyToys = () => {
   const [myToy, setMyToys] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys/${user?.email}`)
+    fetch(`https://toy-car-server-bay.vercel.app/myToys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
@@ -30,7 +30,7 @@ const MyToys = () => {
           }).then((result) => {
             if (result.isConfirmed) {
             
-            fetch(`http://localhost:5000/myToys/${id}`,{
+            fetch(`https://toy-car-server-bay.vercel.app/myToys/${id}`,{
                     method:"DELETE"
             })
             .then(res=> res.json())
@@ -50,13 +50,40 @@ const MyToys = () => {
           })
 }
 
+const handleAscending = ()=>{
+ 
+    fetch(`https://toy-car-server-bay.vercel.app/myToysM/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        setMyToys(data)
+      });
 
-  return <div className="overflow-x-auto w-full md:container mx-auto my-10">
+}
+const handleDescending = ()=>{
+ 
+    fetch(`https://toy-car-server-bay.vercel.app/myToysP/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        setMyToys(data)
+      });
+
+}
+
+  return <div className="overflow-x-auto w-full md:container mx-auto my-10 min-h-full">
     <h1 className="text-4xl text-center mb-7">My <span className="text-[#96bf0e]"> Toys</span></h1>
+
+    <div className="text-end mb-10">
+      <button onClick={handleAscending} className="btn btn-outline hover:border hover:border-[#92b538] hover:text-[#769e13] hover:bg-white bg-[#92b538] text-white">High to low price</button>
+      <button onClick={handleDescending} className="btn btn-outline hover:border hover:border-[#92b538] hover:text-[#769e13] hover:bg-white bg-[#92b538] text-white">Low to high price</button>
+    </div>
+
   <table className="table w-full">
     {/* head */}
     <thead>
       <tr>
+       <th></th>
        <th></th>
         <th>Name</th>
         <th>Seller</th>

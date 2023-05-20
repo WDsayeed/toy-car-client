@@ -49,10 +49,13 @@ const MyToysRow = ({ toy, handleDelete }) => {
               <img src={photo} alt="" />
             </div>
           </div>
-          <div>
+         
+        </div>
+      </td>
+      <td>
+      <div>
             <div className="font-bold">{name}</div>
           </div>
-        </div>
       </td>
       <td>{seller}</td>
       {/* <td>{name}</td> */}

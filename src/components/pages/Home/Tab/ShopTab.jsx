@@ -12,7 +12,7 @@ const ShopTab = () => {
   const [test, setTest] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch("https://toy-car-server-bay.vercel.app/allToys")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -20,7 +20,7 @@ const ShopTab = () => {
   }, [datas]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/categoryToy")
+    fetch("https://toy-car-server-bay.vercel.app/categoryToy")
       .then((res) => res.json())
       .then((data) => setCategory(data));
   }, []);
@@ -60,7 +60,7 @@ const ShopTab = () => {
                         <div className="overflow-hidden md:w-5/6">
                           <img
                             src={td.photo}
-                            className="w-full object-cover"
+                            className="w-full h-40 object-cover"
                             alt="Shoes"
                           />
                         </div>

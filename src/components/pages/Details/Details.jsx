@@ -12,20 +12,24 @@ const Details = () => {
     <div className="hero min-h-screen bg-[#e9ece1]">
       <div className="hero-content flex-col lg:flex-row">
         <img src={photo} className="max-w-sm rounded-lg shadow-2xl" />
-        <div>
+        <div className="">
           <h1 className="text-3xl font-medium">{name}</h1>
-          <p className="py-">
-            Seller: <span>{seller}</span>
+          <p className="my-3">
+            <span className="font-medium">Seller:  </span>{seller}
           </p>
-          <p className="py-">
-            Price: <span>{price}</span>
+          <p className="my-3">
+            
+            <span className="font-medium">Price:   </span>{price}
+
           </p>
-          <p className="py-">
-            Quantity: <span>{quantity}</span>
+          <p className="my-3">
+            
+            <span className="font-medium">Quantity:  </span>{quantity}
+
           </p>
           <div>
             <div className="flex">
-            <span>Rating: </span>
+            <span className="font-medium">Rating:  </span>
             <Rating
               style={{ maxWidth: 120 }}
               value={Math.round(rating)}
@@ -34,11 +38,14 @@ const Details = () => {
             <span>{rating}</span>
           </div>
           </div>
-          <p className="py-">
-            Email: <span>{email}</span>
+          <p className="my-3">
+           
+            <span className="font-medium"> Email:  </span>{email}
+
           </p>
-          <p className="py-">
-            Description: <span>{description}</span>
+          <p className="my-3">
+            <span className="font-medium">Description:  </span>{description}
+
           </p>
         </div>
       </div>

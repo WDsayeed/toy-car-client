@@ -4,7 +4,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const UpdateToy = () => {
-  const { user } = useContext(AuthContext);
+
   const updateToy = useLoaderData();
 
   const {
@@ -28,7 +28,7 @@ const UpdateToy = () => {
     };
     console.log(updatedToys);
 
-    fetch(`http://localhost:5000/allToys/${_id}`, {
+    fetch(`https://toy-car-server-bay.vercel.app/allToys/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

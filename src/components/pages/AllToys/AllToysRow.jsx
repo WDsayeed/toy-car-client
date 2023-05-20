@@ -4,14 +4,14 @@ import { AuthContext } from "../../provider/AuthProvider";
 
 const AllToysRow = ({ toy }) => {
   const {user} = createContext(AuthContext)
-  const { _id, seller, name, category, Price, quantity } = toy;
+  const { _id, seller, name, category, price, quantity } = toy;
   return (
     <tr>
      
       <td>{seller}</td>
       <td>{name}</td>
       <td>{category}</td>
-      <td>{Price}</td>
+      <td>{price}</td>
       <td>{quantity}</td>
       <td>
         <Link to={`/details/${_id}`}>
