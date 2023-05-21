@@ -74,9 +74,9 @@ const handleDescending = ()=>{
   return <div className="overflow-x-auto w-full md:container mx-auto my-10 min-h-full">
     <h1 className="text-4xl text-center mb-7">My <span className="text-[#96bf0e]"> Toys</span></h1>
 
-    <div className="text-end mb-10">
+    <div className=" flex justify-end gap-4 mb-10">
       <button onClick={handleAscending} className="btn btn-outline hover:border hover:border-[#92b538] hover:text-[#769e13] hover:bg-white bg-[#92b538] text-white">High to low price</button>
-      <button onClick={handleDescending} className="btn btn-outline hover:border hover:border-[#92b538] hover:text-[#769e13] hover:bg-white bg-[#92b538] text-white">Low to high price</button>
+      <button onClick={handleDescending} className="btn btn-outline border border-[#92b538] text-[#769e13] hover:border-0 hover:bg-[#769e13] hover:text-white">Low to high price</button>
     </div>
 
   <table className="table w-full">

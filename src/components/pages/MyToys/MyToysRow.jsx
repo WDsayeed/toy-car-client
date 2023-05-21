@@ -58,7 +58,6 @@ const MyToysRow = ({ toy, handleDelete }) => {
           </div>
       </td>
       <td>{seller}</td>
-      {/* <td>{name}</td> */}
       <td>{email}</td>
       <td>{category}</td>
       <td>{price}</td>

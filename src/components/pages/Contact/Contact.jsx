@@ -56,7 +56,7 @@ const Contact = () => {
         
       </div>
       <form className="md:container mx-auto my-16">
-      <h1 className="text-4xl">
+      <h1 className="text-4xl text-center">
       <span className="text-[#96bf0e]">Get  In</span>  Touch 
       </h1>
       <div className="card-body grid grid-cols-2 gap-10">

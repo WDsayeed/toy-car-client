@@ -41,7 +41,7 @@ const Header = () => {
             <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    isActive ? "text-[#565604] font-semibold" : ""
+                    isActive ? "text-white font-bold" : ""
                   }
                 >
                   Home
@@ -51,7 +51,7 @@ const Header = () => {
             <NavLink
                   to="/allToys"
                   className={({ isActive }) =>
-                    isActive ? "text-[#5b5b03] font-semibold" : ""
+                    isActive ? "text-white font-bold" : ""
                   }
                 >
                   All Toys
@@ -62,7 +62,7 @@ const Header = () => {
               <NavLink
                   to="/myToys"
                   className={({ isActive }) =>
-                    isActive ? "text-[#e9e96d] font-semibold" : ""
+                    isActive ? "text-white font-bold" : ""
                   }
                 >
                   My Toys
@@ -73,7 +73,7 @@ const Header = () => {
               <NavLink
                   to="/addToys"
                   className={({ isActive }) =>
-                    isActive ? "text-[#e9e96d] font-semibold" : ""
+                    isActive ? "text-white font-bold" : ""
                   }
                 >
                   Add a Toy
@@ -84,7 +84,7 @@ const Header = () => {
               <NavLink
                   to="/blog"
                   className={({ isActive }) =>
-                    isActive ? "text-[#4b4b03] font-semibold" : ""
+                    isActive ? "text-white font-bold" : ""
                   }
                 >
                   Blog
@@ -103,7 +103,7 @@ const Header = () => {
           <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    isActive ? "text-[#5c5c05] font-semibold" : ""
+                    isActive ? "text-white font-bold" : ""
                   }
                 >
                   Home
@@ -115,17 +115,19 @@ const Header = () => {
             <NavLink
                   to="/allToys"
                   className={({ isActive }) =>
-                    isActive ? "text-[#4e4e03] font-semibold" : ""
+                    isActive ? "text-white font-bold" : ""
                   }
                 >
                   All Toys
                 </NavLink>
           </li>
-          <li>
+         {
+          user && <>
+           <li>
             <NavLink
                   to="/myToys"
                   className={({ isActive }) =>
-                    isActive ? "text-[#5e5e04] font-semibold" : ""
+                    isActive ? "text-white font-bold" : ""
                   }
                 >
                   My Toys
@@ -136,18 +138,20 @@ const Header = () => {
             <NavLink
                   to="/addToys"
                   className={({ isActive }) =>
-                    isActive ? "text-[#4e4e04] font-semibold" : ""
+                    isActive ? "text-white font-bold" : ""
                   }
                 >
                   Add a Toys
                 </NavLink>
           </li>
+          </>
+         }
           <li>
           
             <NavLink
                   to="/blog"
                   className={({ isActive }) =>
-                    isActive ? "text-[#545405] font-semibold" : ""
+                    isActive ? "text-white font-bold" : ""
                   }
                 >
                   Blog
@@ -158,7 +162,7 @@ const Header = () => {
             <NavLink
                   to="/register"
                   className={({ isActive }) =>
-                    isActive ? "text-[#575704] font-semibold" : ""
+                    isActive ? "text-white font-bold" : ""
                   }
                 >
                   Register

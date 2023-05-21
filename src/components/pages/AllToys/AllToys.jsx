@@ -5,7 +5,9 @@ import useTitle from "../../../hooks/useTitle";
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
   const [searchText, setSearchText] = useState('')
+  
   useTitle("AllToys");
+
   useEffect(() => {
     fetch("https://toy-car-server-bay.vercel.app/allToys")
       .then((res) => res.json())
@@ -34,7 +36,8 @@ const AllToys = () => {
       <table className="table table-zebra w-full">
         <thead className="w-full">
           <tr>
-            <th>Name</th>
+            <th></th>
+            <th>SELLER</th>
             <th>TOY NAME</th>
             <th>CATEGORY</th>
             <th>PRICE</th>

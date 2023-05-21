@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
+import Swal from "sweetalert2";
+import 'animate.css';
 
 const ShopTab = () => {
+  const {user} = useContext(AuthContext)
   const [datas, setData] = useState([]);
   const [tabData, setTabData] = useState([]);
   const [category, setCategory] = useState([]);
@@ -39,8 +43,23 @@ const ShopTab = () => {
     console.log(filterData);
   };
 
+const checkUser =()=>{
+  if(!user){
+    return Swal.fire({
+      title: 'You have to log in first to view details',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
+  }
+}
+
   return (
-    <div className="md:w-2/4 mx-auto my-20">
+
+    <div className="md:w-2/4 w-full mx-auto my-20">
       <h1 className="text-4xl text-center mb-6">Shop By<span className="text-[#7ca005]"> Category</span></h1>
         <Tabs>
           <TabList>
@@ -81,7 +100,7 @@ const ShopTab = () => {
                           </div>
                           <div className="card-actions justify-end">
                             <Link to={`/details/${td._id}`}>
-                              <button className="btn bg-[#86ab0b] border-0 hover:text-[#69860c] hover:bg-[#FAEDCD]">
+                              <button onClick={checkUser} className="btn bg-[#86ab0b] border-0 hover:text-[#69860c] hover:bg-[#FAEDCD]">
                                 View Details
                               </button>
                             </Link>

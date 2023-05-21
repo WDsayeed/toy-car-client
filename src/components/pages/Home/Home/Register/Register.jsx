@@ -3,9 +3,11 @@ import { Form, Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../../provider/AuthProvider";
 import regImg from "../../../../../assets/images/login-removebg-preview.png";
 import useTitle from "../../../../../hooks/useTitle";
+import { FaGoogle } from "react-icons/fa";
 
 const Register = () => {
-  const { createUser, updateUser } = useContext(AuthContext);
+
+  const { createUser, updateUser,googleLogIn } = useContext(AuthContext);
   const [errorPassword, setErrorPassword] = useState("");
   const navigate = useNavigate();
   useTitle('Register')
@@ -44,6 +46,18 @@ const Register = () => {
       })
       .catch((error) => {
         console.log(error.message);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    googleLogIn()
+      .then((result) => {
+        const user = result.user;
+        navigate(from, {replace: true});
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -110,6 +124,12 @@ const Register = () => {
               <div className="form-control mt-6">
                 <button className="btn hover:bg-[#E9EDC9] hover:text-[#698707] bg-[#a7bd5e] text-white border-0">Register</button>
               </div>
+              <div className="form-control mt-6">
+              <button className=" flex items-center justify-center gap-3 btn  hover:bg-[#E9EDC9] hover:text-[#698707] bg-[#a7bd5e] text-white border-0" onClick={handleGoogleSignIn}>
+              <FaGoogle className="h-7 w-5 "></FaGoogle>
+                
+                Google sign In</button>
+            </div>
               <p>
                 Already have an account? <Link to="/login">Login</Link>
               </p>

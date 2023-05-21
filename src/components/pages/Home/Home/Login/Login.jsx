@@ -9,7 +9,7 @@ import useTitle from "../../../../../hooks/useTitle";
 const Login = () => {
 
   useTitle('Login')
-  const {signIn, googleSignIn} = useContext(AuthContext)
+  const {signIn, googleLogIn} = useContext(AuthContext)
   const [error, setError] = useState('')
 
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ const Login = () => {
   }
 
   const handleGoogleSignIn = () => {
-    googleSignIn()
+    googleLogIn()
       .then((result) => {
         const user = result.user;
         navigate(from, {replace: true});
