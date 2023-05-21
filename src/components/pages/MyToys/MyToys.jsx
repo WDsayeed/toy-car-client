@@ -71,8 +71,6 @@ const handleAscending = ()=>{
 
 }
 
-// https://i.ibb.co/XJH9Z0z/mini-police-2.jpg
-//The Siren Sprint toy car is an exciting and interactive toy designed to resemble a miniature version of a real-life race car. It features vibrant colors, sleek design, and numerous interactive features that provide an engaging play experience for children and enthusiasts alike
 
   return <div className="overflow-x-auto w-full md:container mx-auto my-10 min-h-full">
     <h1 className="text-4xl text-center mb-7">My <span className="text-[#96bf0e]"> Toys</span></h1>
