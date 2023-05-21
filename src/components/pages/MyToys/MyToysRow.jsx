@@ -64,7 +64,7 @@ const MyToysRow = ({ toy, handleDelete }) => {
       <td>{quantity}</td>
       <td> <div className="flex">
                             <Rating
-                              style={{ maxWidth: 120 }}
+                              style={{ maxWidth: 80 }}
                               value={Math.round(rating)}
                               readOnly
                             />

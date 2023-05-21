@@ -50,19 +50,9 @@ const MyToys = () => {
           })
 }
 
-const handleAscending = ()=>{
- 
-    fetch(`https://toy-car-server-bay.vercel.app/myToysM/${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-        setMyToys(data)
-      });
-
-}
 const handleDescending = ()=>{
  
-    fetch(`https://toy-car-server-bay.vercel.app/myToysP/${user?.email}`)
+    fetch(`https://toy-car-server-bay.vercel.app/myToysDescending/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
@@ -70,13 +60,26 @@ const handleDescending = ()=>{
       });
 
 }
+const handleAscending = ()=>{
+ 
+    fetch(`https://toy-car-server-bay.vercel.app/myToysAscending/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        setMyToys(data)
+      });
+
+}
+
+// https://i.ibb.co/XJH9Z0z/mini-police-2.jpg
+//The Siren Sprint toy car is an exciting and interactive toy designed to resemble a miniature version of a real-life race car. It features vibrant colors, sleek design, and numerous interactive features that provide an engaging play experience for children and enthusiasts alike
 
   return <div className="overflow-x-auto w-full md:container mx-auto my-10 min-h-full">
     <h1 className="text-4xl text-center mb-7">My <span className="text-[#96bf0e]"> Toys</span></h1>
 
     <div className=" flex justify-end gap-4 mb-10">
-      <button onClick={handleAscending} className="btn btn-outline hover:border hover:border-[#92b538] hover:text-[#769e13] hover:bg-white bg-[#92b538] text-white">High to low price</button>
-      <button onClick={handleDescending} className="btn btn-outline border border-[#92b538] text-[#769e13] hover:border-0 hover:bg-[#769e13] hover:text-white">Low to high price</button>
+      <button onClick={handleDescending} className="btn btn-outline hover:border hover:border-[#92b538] hover:text-[#769e13] hover:bg-white bg-[#92b538] text-white">High to low price</button>
+      <button onClick={handleAscending} className="btn btn-outline border border-[#92b538] text-[#769e13] hover:border-0 hover:bg-[#769e13] hover:text-white">Low to high price</button>
     </div>
 
   <table className="table w-full">
@@ -84,7 +87,7 @@ const handleDescending = ()=>{
     <thead>
       <tr>
        <th></th>
-       <th></th>
+       <th>Image</th>
         <th>Name</th>
         <th>Seller</th>
         <th>Seller Email</th>
@@ -92,7 +95,7 @@ const handleDescending = ()=>{
         <th>Price</th>
         <th>Quantity</th>
         <th>Rating</th>
-        <th></th>
+        <th>Edit</th>
       </tr>
     </thead>
     <tbody>

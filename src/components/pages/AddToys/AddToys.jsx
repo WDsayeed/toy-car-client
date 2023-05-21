@@ -59,7 +59,7 @@ const AddToys = () => {
       <div className="card-body grid grid-cols-2 gap-10">
         <div className="form-control ">
           <label className="label">
-            <span className="label-text">Add Picture:</span>
+            <span className="label-text font-semibold">Add Picture:</span>
           </label>
           <input
             type="text"
@@ -70,7 +70,7 @@ const AddToys = () => {
         </div>
         <div className="form-control ">
           <label className="label">
-            <span className="label-text">Name:</span>
+            <span className="label-text font-semibold">Name:</span>
           </label>
           <input
             type="text"
@@ -81,7 +81,7 @@ const AddToys = () => {
         </div>
         <div className="form-control ">
           <label className="label">
-            <span className="label-text">Seller Name:</span>
+            <span className="label-text font-semibold">Seller Name:</span>
           </label>
           <input
             type="text"
@@ -93,7 +93,7 @@ const AddToys = () => {
         </div>
         <div className="form-control ">
           <label className="label">
-            <span className="label-text">Seller Email:</span>
+            <span className="label-text font-semibold">Seller Email:</span>
           </label>
           <input
             type="email"
@@ -105,7 +105,7 @@ const AddToys = () => {
         </div>
         <div className="form-control ">
           <label className="label">
-            <span className="label-text">Price:</span>
+            <span className="label-text font-semibold">Price:</span>
           </label>
           <input
             type="number"
@@ -116,7 +116,7 @@ const AddToys = () => {
         </div>
         <div className="form-control ">
           <label className="label">
-            <span className="label-text">Rating:</span>
+            <span className="label-text font-semibold">Rating:</span>
           </label>
           <input
             type="number"
@@ -127,7 +127,7 @@ const AddToys = () => {
         </div>
         <div className="form-control ">
           <label className="label">
-            <span className="label-text">Available quantity:</span>
+            <span className="label-text font-semibold">Available quantity:</span>
           </label>
           <input
             type="number"
@@ -139,7 +139,7 @@ const AddToys = () => {
        
        <div  className="form-control">
        <label className="label">
-            <span className="label-text">Add Category:</span>
+            <span className="label-text font-semibold">Add Category:</span>
           </label>
           <select className="select w-full  select-bordered " name="category">
         
@@ -154,7 +154,7 @@ const AddToys = () => {
        
       <div className="form-control col-span-2 w-full">
           <label className="label">
-            <span className="label-text">Description:</span>
+            <span className="label-text font-semibold">Description:</span>
           </label>
           <input
             type="text"

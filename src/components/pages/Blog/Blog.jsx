@@ -16,7 +16,7 @@ const Blog = () => {
         <div className="collapse-content">
           <p>
             {" "}
-            <span>Answer: </span>
+            <span className="font-semibold">Answer: </span>
             Access token and refresh token are used in authentication and
             authorization processes.Access token used to gain authorized access
             to protected resources or perform actions on behalf of a user.
@@ -37,6 +37,8 @@ const Blog = () => {
           Compare SQL and NoSQL databases?
         </div>
         <div className="collapse-content">
+        <span className="font-semibold">Answer: </span>
+
           <ul>
             <li>
               1. SQL databases are relational, and NoSQL databases are
@@ -75,10 +77,10 @@ const Blog = () => {
         </div>
         <div className="collapse-content">
           <p>
-            <span>Answer:</span> Express.js is a free and open source web
+            <span className="font-semibold">Answer:</span> Express.js is a free and open source web
             application framework for node.js. It is used for designing and
-            building web application easily.Express.js allows developers to
-            handle various HTTP requests (GET, POST, PUT, DELETE, etc.) and
+            building web application easily. Express.js allows developers to
+            handle various HTTP requests (GET, POST, PUT,PATCH, DELETE, etc.) and
             define routes to handle different URLs.
           </p>
           <br />
@@ -99,7 +101,7 @@ const Blog = () => {
         </div>
         <div className="collapse-content">
           <p>
-            <span>Answer: </span>
+            <span className="font-semibold">Answer: </span>
             MongoDB's aggregate is a framework for performing advanced data
             processing and analysis tasks on collections of documents within a
             MongoDB database. It allows  to perform complex queries,

@@ -85,6 +85,7 @@ const Register = () => {
                   placeholder="name"
                   name="name"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -92,10 +93,12 @@ const Register = () => {
                   <span className="label-text">Email</span>
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   placeholder="email"
                   name="email"
                   className="input input-bordered"
+                  required
+
                 />
               </div>
               <div className="form-control">
@@ -107,6 +110,8 @@ const Register = () => {
                   placeholder="password"
                   name="password"
                   className="input input-bordered"
+                  required
+
                 />
               </div>
               <div className="form-control">
@@ -118,6 +123,8 @@ const Register = () => {
                   placeholder="url"
                   name="photo"
                   className="input input-bordered"
+                  required
+
                 />
               </div>
               <p className="text-red-700">{errorPassword}</p>
@@ -131,7 +138,7 @@ const Register = () => {
                 Google sign In</button>
             </div>
               <p>
-                Already have an account? <Link to="/login">Login</Link>
+                Already have an account? <Link to="/login"><span className="text-[#698707] underline ">Login</span></Link>
               </p>
             </div>
           </Form>

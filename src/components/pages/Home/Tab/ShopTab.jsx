@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import 'animate.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ShopTab = () => {
   const {user} = useContext(AuthContext)
@@ -14,6 +16,10 @@ const ShopTab = () => {
   const [tabData, setTabData] = useState([]);
   const [category, setCategory] = useState([]);
   const [test, setTest] = useState(0);
+
+  useEffect(()=>{
+    AOS.init({duration:2000});
+  },[])
 
   useEffect(() => {
     fetch("https://toy-car-server-bay.vercel.app/allToys")
@@ -74,7 +80,7 @@ const checkUser =()=>{
               <TabPanel key={cate._id}>
                 <div className="grid md:grid-cols-3 gap-5">
                   {tabData.map((td) => (
-                    <div key={td._id} className="w-full">
+                    <div key={td._id} className="w-full"  data-aos="zoom-in">
                       <div className="card  bg-base-100 shadow-xl">
                         <div className="overflow-hidden md:w-5/6">
                           <img
@@ -86,13 +92,14 @@ const checkUser =()=>{
                         <div className="card-body">
                           <h2 className="card-title">{td.name}</h2>
                           <p>
-                            <span>Price:</span>
-                            {td.price}
+                            <span className="font-semibold mr-2">Price:</span>
+                            ${td.price}
                           </p>
 
                           <div className="flex">
+                            <span className="font-semibold mr-2">Rating: </span>
                             <Rating
-                              style={{ maxWidth: 120 }}
+                              style={{ maxWidth: 80 }}
                               value={Math.round(td.rating)}
                               readOnly
                             />
@@ -100,7 +107,7 @@ const checkUser =()=>{
                           </div>
                           <div className="card-actions justify-end">
                             <Link to={`/details/${td._id}`}>
-                              <button onClick={checkUser} className="btn bg-[#86ab0b] border-0 hover:text-[#69860c] hover:bg-[#FAEDCD]">
+                              <button onClick={checkUser} className="btn mt-5 bg-[#CCD5AE] border-0 hover:text-[#69860c] hover:bg-[#FAEDCD] text-black">
                                 View Details
                               </button>
                             </Link>

@@ -19,7 +19,7 @@ const Details = () => {
           </p>
           <p className="my-3">
             
-            <span className="font-medium">Price:   </span>{price}
+            <span className="font-medium">Price:   </span>${price}
 
           </p>
           <p className="my-3">
@@ -31,7 +31,7 @@ const Details = () => {
             <div className="flex">
             <span className="font-medium">Rating:  </span>
             <Rating
-              style={{ maxWidth: 120 }}
+              style={{ maxWidth: 80 }}
               value={Math.round(rating)}
               readOnly
             />

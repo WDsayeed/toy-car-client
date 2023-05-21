@@ -37,7 +37,7 @@ const Login = () => {
     })
     .catch((error) => {
       setError(error.message)
-      
+      console.log(error.message)
     });
   }
 
@@ -67,10 +67,11 @@ const Login = () => {
                 <span className="label-text">Email</span>
               </label>
               <input
-                type="text"
+                type="email"
                 placeholder="email"
                 name="email"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">

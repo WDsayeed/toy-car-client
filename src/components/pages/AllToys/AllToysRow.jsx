@@ -9,10 +9,10 @@ const AllToysRow = ({ toy, index }) => {
   return (
     <tr>
      <td>{index + 1}</td>
-      {user && <td>{seller}</td>}
+      <td>{seller}</td>
       <td>{name}</td>
       <td>{category}</td>
-      <td>{price}</td>
+      <td>${price}</td>
       <td>{quantity}</td>
       <td>
         <Link to={`/details/${_id}`}>

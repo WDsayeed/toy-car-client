@@ -5,6 +5,8 @@ import useTitle from "../../../hooks/useTitle";
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
   const [searchText, setSearchText] = useState('')
+  // const [error, setError] = useState([])
+  
   
   useTitle("AllToys");
 
@@ -14,11 +16,16 @@ const AllToys = () => {
       .then((data) => setAllToys(data));
   }, []);
 
+  // if(error.length == 0){
+  //   return alert('data not found')
+  // }
+  console.log(allToys)
   const handleSearch = ()=>{
     fetch(`https://toy-car-server-bay.vercel.app/toySearch/${searchText}`)
     .then(res=> res.json())
     .then(data=> {
       setAllToys(data)
+      // setError(data)
     })
   }
 
