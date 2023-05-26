@@ -9,17 +9,20 @@ import useTitle from "../../../../../hooks/useTitle";
 const Login = () => {
 
   useTitle('Login')
-  const {signIn, googleLogIn} = useContext(AuthContext)
-  const [error, setError] = useState('')
 
-  const navigate = useNavigate();
+  const {signIn, googleLogIn}= useContext(AuthContext)
+  const [error, setError]= useState('')
+
+
+  const navigate = useNavigate()
   const location = useLocation()
 
   const from = location.state?.from?.pathname || '/'
 
   if(error){
-    return toast.error(error) 
-    }
+    return toast.error(error)
+  }
+
 
   const handleLogin= event=>{
     event.preventDefault();
